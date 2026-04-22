@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Leaf, ShoppingCart } from "lucide-react";
 
 /* ─── Category data ──────────────────────────────────────────────────── */
 const categories = [
@@ -214,7 +215,7 @@ function BannerCard({ badge, title, desc, btnLabel, imgSeed }) {
           marginBottom: 12, alignSelf: "flex-start",
           letterSpacing: ".15px",
         }}>
-          🌿 {badge}
+          <Leaf size={12} /> {badge}
         </span>
 
         <h2 style={{
@@ -246,7 +247,7 @@ function BannerCard({ badge, title, desc, btnLabel, imgSeed }) {
           boxShadow: "0 4px 14px rgba(58,125,60,.38)",
           letterSpacing: ".1px",
         }}>
-          🛒 {btnLabel}
+          <ShoppingCart size={14} /> {btnLabel}
         </button>
       </div>
 

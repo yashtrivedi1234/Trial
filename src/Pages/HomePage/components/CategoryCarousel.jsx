@@ -1,60 +1,67 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
+import {
+  FlaskConical,
+  Leaf,
+  ShoppingBag,
+  Sprout,
+  Wheat,
+} from "lucide-react";
 
 const categories = [
   {
     name: "Handicrafts",
     items: 1,
     bg: "#FFE4E4",
-    emoji: "🧺",
+    icon: ShoppingBag,
     img: "https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?w=120&h=120&fit=crop&crop=center",
   },
   {
     name: "Rice",
     items: 0,
     bg: "#FFF3E0",
-    emoji: "🍚",
+    icon: Wheat,
     img: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=120&h=120&fit=crop&crop=center",
   },
   {
     name: "Mushrooms",
     items: 0,
     bg: "#FCE4EC",
-    emoji: "🍄",
+    icon: FlaskConical,
     img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=120&h=120&fit=crop&crop=center",
   },
   {
     name: "Ayurveda",
     items: 10,
     bg: "#E8F5E9",
-    emoji: "🌿",
+    icon: Leaf,
     img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=120&h=120&fit=crop&crop=center",
   },
   {
     name: "Millets",
     items: 6,
     bg: "#EDE7F6",
-    emoji: "🌾",
+    icon: Wheat,
     img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=120&h=120&fit=crop&crop=center",
   },
   {
     name: "Teas",
     items: 2,
     bg: "#E8EAF6",
-    emoji: "🍵",
+    icon: Sprout,
     img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=120&h=120&fit=crop&crop=center",
   },
   {
     name: "Spices",
     items: 8,
     bg: "#FFF8E1",
-    emoji: "🌶️",
+    icon: FlaskConical,
     img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=120&h=120&fit=crop&crop=center",
   },
   {
     name: "Honey",
     items: 4,
     bg: "#FFF3E0",
-    emoji: "🍯",
+    icon: Leaf,
     img: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=120&h=120&fit=crop&crop=center",
   },
 ];
@@ -217,6 +224,7 @@ export default function CategoryCarousel() {
 
 function CategoryCard({ cat }) {
   const [imgError, setImgError] = useState(false);
+  const FallbackIcon = cat.icon || Leaf;
 
   return (
     <div
@@ -262,7 +270,7 @@ function CategoryCard({ cat }) {
             }}
           />
         ) : (
-          <span style={{ fontSize: 42 }}>{cat.emoji}</span>
+          <FallbackIcon size={42} color="#1a7a3f" strokeWidth={1.8} />
         )}
       </div>
 
