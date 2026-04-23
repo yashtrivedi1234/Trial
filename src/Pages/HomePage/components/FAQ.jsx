@@ -59,7 +59,7 @@ export default function FAQ() {
 
   return (
     <div className="bg-green-50 py-10">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-[1380px]  mx-auto px-8">
         <h2 className="text-2xl font-bold text-center mb-1 text-gray-900">Frequently Asked Questions</h2>
         <p className="text-center text-gray-500 text-sm mb-6">
           Everything you need to know about KaashtKart products and orders.

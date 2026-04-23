@@ -41,7 +41,7 @@ const sections = [
 
 export default function SectionProductGrid() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-6 space-y-6">
+    <div className="max-w-[1380px] mx-auto px-8 py-6 space-y-6">
       {sections.map((section) => (
         <div key={section.title} className="border border-gray-100 rounded-xl overflow-hidden">
           <div className="px-6 py-4 bg-white border-b border-gray-100">

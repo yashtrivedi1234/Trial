@@ -12,7 +12,7 @@ const events = [
 
 export default function RecentEvents() {
   return (
-    <div className="max-w-7xl mx-auto px-8 py-8">
+    <div className="max-w-[1380px] mx-auto px-8 py-8">
       <h2 className="text-2xl font-bold text-center mb-1 text-gray-900">Recent Events</h2>
       <p className="text-center text-gray-500 text-sm mb-6">Join our agricultural workshops, expos and farmer meetups</p>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">

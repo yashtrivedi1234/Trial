@@ -11,7 +11,7 @@ const items = [
 export default function TrustStrip() {
   return (
     <div className="bg-gray-50 border-y border-gray-100 py-4">
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-around">
+      <div className="max-w-[1380px] mx-auto px-8 flex items-center justify-around">
         {items.map((item) => {
           const Icon = item.icon;
           return (

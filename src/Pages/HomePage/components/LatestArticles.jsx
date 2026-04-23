@@ -34,7 +34,7 @@ export default function LatestArticles() {
   const numDots = maxIndex + 1;
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-10">
+    <div className="max-w-[1380px] mx-auto px-8 py-10">
       <div className="flex items-end justify-between mb-1">
         <h2 className="text-2xl font-bold text-gray-900 border-b-2 border-green-600 inline-block pb-0.5">
           Latest Articles
