@@ -49,7 +49,7 @@ export default function CategorySection() {
 
   return (
     <div className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-[1380px] mx-auto px-8">
         {/* Heading */}
         <h2 className="text-2xl font-bold text-center mb-1 text-gray-900">
           Fresh · Pure · Authentic ·

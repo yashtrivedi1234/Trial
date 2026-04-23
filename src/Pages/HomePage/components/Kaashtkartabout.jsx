@@ -38,124 +38,76 @@ const FEATURES = [
 
 export default function KaashtKartAbout() {
   return (
-    <section style={{  padding: "4px 8px 0", fontFamily: "'Poppins', sans-serif" }} aria-label="About KaashtKart">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    <section
+      className="px-2 pt-1 font-[Poppins]"
+      style={{ fontFamily: "'Poppins', sans-serif" }}
+      aria-label="About KaashtKart"
+    >
+      {/* Google Font Import — tailwind.config ya index.css mein daalein */}
+      {/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); */}
 
-        .kk-about-copy {
-          background: linear-gradient(110deg, #0d2224 0%, #10292a 42%, #0e1f24 100%);
-          color: #dce3de;
-          border-radius: 22px 22px 0 0;
-          padding: 26px 34px 24px;
-          box-shadow: inset 0 0 0 1px rgba(52,121,96,0.2);
-          text-align: justify;
-        }
+      <div className="max-w-[1380px] mx-auto">
 
-        .kk-about-copy p {
-          margin: 0 0 16px;
-          font-size: 14.5px;
-          line-height: 1.58;
-          font-weight: 500;
-          color: #d6e0db;
-        }
+        {/* About Copy Section */}
+        <div className="bg-gradient-to-br from-[#0d2224] via-[#10292a] to-[#0e1f24] text-[#dce3de] rounded-t-[22px] px-[34px] py-[26px] shadow-inner ring-1 ring-[#347960]/20 text-justify">
 
-        .kk-about-copy p:last-child { margin-bottom: 0; }
-
-        .kk-highlight {
-          display: inline;
-          background: #20a455;
-          color: #ffffff;
-          font-weight: 700;
-          padding: 0 4px;
-          border-radius: 2px;
-        }
-
-        .kk-features {
-          background: #e6ebea;
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 18px;
-          padding: 20px 0 0;
-        }
-
-        .kk-feature {
-          background: #eceeed;
-          border-radius: 10px;
-          min-height: 78px;
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          padding: 14px 22px;
-          box-shadow: inset 0 0 0 1px rgba(16,50,37,0.04);
-        }
-
-        .kk-feature-icon {
-          width: 40px;
-          height: 40px;
-          min-width: 40px;
-          border-radius: 50%;
-          background: #1d9a4c;
-          display: grid;
-          place-items: center;
-        }
-
-        .kk-feature-title {
-          margin: 0;
-          color: #1f3446;
-          font-size: 18px;
-          line-height: 1.1;
-          font-weight: 600;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .kk-feature-subtitle {
-          margin: 3px 0 0;
-          color: #8a9090;
-          font-size: 15px;
-          line-height: 1.1;
-          font-weight: 500;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        @media (max-width: 980px) {
-          .kk-features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        }
-        @media (max-width: 600px) {
-          .kk-features { grid-template-columns: 1fr; gap: 12px; padding-top: 14px; }
-          .kk-about-copy { padding: 18px 16px; }
-          .kk-about-copy p { font-size: 14.5px; line-height: 1.68; }
-        }
-      `}</style>
-
-      <div style={{ maxWidth: 1380, margin: "0 auto" }}>
-        <div className="kk-about-copy">
-          <p>
-            KaashtKart is an E-commerce platform to facilitate FPOs, SHGs, NGOs, Entrepreneur Farmers to connect them directly to the customers. This is the first online marketplace exclusively customized for FPOs and other rural businesses. We designed an Easy to Use platform to empower the Agri producers, manufacturers and other sellers by enabling them to reach directly exclusive consumers, retail and wholesale customers. Our aim is to transform the agricultural supply chain, fostering a direct, transparent and open market connection between farmers and consumers.
+          <p className="text-[14.5px] leading-[1.58] font-medium text-[#d6e0db] mb-4 last:mb-0">
+            KaashtKart is an E-commerce platform to facilitate FPOs, SHGs, NGOs, Entrepreneur Farmers to connect them
+            directly to the customers. This is the first online marketplace exclusively customized for FPOs and other
+            rural businesses. We designed an Easy to Use platform to empower the Agri producers, manufacturers and other
+            sellers by enabling them to reach directly exclusive consumers, retail and wholesale customers. Our aim is
+            to transform the agricultural supply chain, fostering a direct, transparent and open market connection
+            between farmers and consumers.
           </p>
-          <p>
-            <span className="kk-highlight">Farmers Producers Organisation (FPO)</span>{" "}- A collective organisation of farmers or other primary producers that aims to improve their income, efficiency and profitability through collective bargaining, access to resources, and value addition.
+
+          <p className="text-[14.5px] leading-[1.58] font-medium text-[#d6e0db] mb-4 last:mb-0">
+            <span className="inline bg-[#20a455] text-white font-bold px-1 rounded-sm">
+              Farmers Producers Organisation (FPO)
+            </span>{" "}
+            - A collective organisation of farmers or other primary producers that aims to improve their income,
+            efficiency and profitability through collective bargaining, access to resources, and value addition.
           </p>
-          <p>
-            According to a latest report* 45000 FPOs are registered countrywide, but only 16000 compliant with regulatory filings. The biggest challenge before the FPOs and Entrepreneur farmers are sales and marketing of their products without the engagements of the traditional middlemen system.{" "}
-            <span className="kk-highlight">KaashtKart is an effort to provide a dedicated Direct to Customers (D2C) online marketplace.</span>{" "}
-            We are committed to provide a comprehensive marketplace to sell and buy various products needed for agri communities. At the same time, urban folks can buy online pure, authentic and healthy products which are not easily available. KaashtKart is a mission to empower the farming communities.
+
+          <p className="text-[14.5px] leading-[1.58] font-medium text-[#d6e0db] mb-4 last:mb-0">
+            According to a latest report* 45000 FPOs are registered countrywide, but only 16000 compliant with
+            regulatory filings. The biggest challenge before the FPOs and Entrepreneur farmers are sales and marketing
+            of their products without the engagements of the traditional middlemen system.{" "}
+            <span className="inline bg-[#20a455] text-white font-bold px-1 rounded-sm">
+              KaashtKart is an effort to provide a dedicated Direct to Customers (D2C) online marketplace.
+            </span>{" "}
+            We are committed to provide a comprehensive marketplace to sell and buy various products needed for agri
+            communities. At the same time, urban folks can buy online pure, authentic and healthy products which are
+            not easily available. KaashtKart is a mission to empower the farming communities.
           </p>
-          <p>
-            KaashtKart aims to transform the agricultural supply chain by creating a transparent, direct-to-customer marketplace connecting farmers and consumers.
+
+          <p className="text-[14.5px] leading-[1.58] font-medium text-[#d6e0db] mb-0">
+            KaashtKart aims to transform the agricultural supply chain by creating a transparent, direct-to-customer
+            marketplace connecting farmers and consumers.
           </p>
         </div>
 
-        <div className="kk-features">
+        {/* Features Grid */}
+        <div className="bg-[#e6ebea] grid grid-cols-4 gap-[18px] pt-5 max-[980px]:grid-cols-2 max-[600px]:grid-cols-1 max-[600px]:gap-3 max-[600px]:pt-[14px]">
           {FEATURES.map((f) => (
-            <article className="kk-feature" key={f.title}>
-              <div className="kk-feature-icon">{f.icon}</div>
+            <article
+              key={f.title}
+              className="bg-[#eceeed] rounded-[10px] min-h-[78px] flex items-center gap-[14px] px-[22px] py-[14px] ring-1 ring-[#103225]/[0.04]"
+            >
+              <div className="w-10 h-10 min-w-[40px] rounded-full bg-[#1d9a4c] grid place-items-center">
+                {f.icon}
+              </div>
               <div>
-                <h3 className="kk-feature-title">{f.title}</h3>
-                <p className="kk-feature-subtitle">{f.subtitle}</p>
+                <h3 className="m-0 text-[#1f3446] text-lg leading-[1.1] font-semibold font-[Poppins]">
+                  {f.title}
+                </h3>
+                <p className="mt-[3px] mb-0 text-[#8a9090] text-[15px] leading-[1.1] font-medium font-[Poppins]">
+                  {f.subtitle}
+                </p>
               </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,27 +1,26 @@
 import React from "react";
-
 import orangeImg from "../../../assets/PromoCards/imgi_20_Orange.png";
 import mangoImg from "../../../assets/PromoCards/imgi_21_mango-banner.jpg";
 
 const PromoCards = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-6 p-4">
+    <div className="max-w-[1380px] mx-auto grid md:grid-cols-2 gap-6 px-4 py-6">
       
-      {/* LEFT IMAGE */}
-      <div className="bg-[#f5f7f2] rounded-2xl p-4 flex items-center justify-center">
+      {/* LEFT - Orange Image */}
+      <div className="rounded-2xl overflow-hidden">
         <img
           src={orangeImg}
           alt="orange"
-          className="w-full max-h-[250px] object-contain"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* RIGHT IMAGE */}
-      <div className="bg-[#f5f7f2] rounded-2xl p-4 flex items-center justify-center">
+      {/* RIGHT - Mango Image */}
+      <div className="rounded-2xl overflow-hidden">
         <img
           src={mangoImg}
           alt="mango"
-          className="w-full max-h-[250px] object-contain"
+          className="w-full h-full object-cover"
         />
       </div>
 
