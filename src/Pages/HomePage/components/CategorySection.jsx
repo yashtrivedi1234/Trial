@@ -18,22 +18,22 @@ import HoneyImg from "../../../assets/Categories Images/imgi_15_honey_sid7ip.png
 import DryFruitsImg from "../../../assets/Categories Images/imgi_16_Dry_Fruits_k1yl2n.png";
 import ExtraImg from "../../../assets/Categories Images/imgi_17_ubdygoulttlb12xcrgk4.webp";
 
-const GREEN = "#1a7a3f";
+const GREEN = "#22c55e";
 
 const categories = [
-  { name: "Handicrafts", count: "1 items",  color: "#fff0f0", img: HandicraftImg },
-  { name: "Rice",        count: "0 items",  color: "#f0f4ff", img: RiceImg },
-  { name: "Mushrooms",   count: "0 items",  color: "#f5f0ff", img: MushroomImg },
-  { name: "Ayurveda",    count: "10 items", color: "#fff8f0", img: AyurvedImg },
-  { name: "Millets",     count: "6 items",  color: "#f0fff4", img: MilletsImg },
-  { name: "Teas",        count: "2 items",  color: "#fff0f8", img: TeaImg },
-  { name: "Pickle",      count: "0 items",  color: "#fffbe6", img: PickleImg },
-  { name: "Cocoa",       count: "0 items",  color: "#fdf0e8", img: CocoaImg },
-  { name: "Spices",      count: "0 items",  color: "#fff4f0", img: SpicesImg },
-  { name: "Mustard",     count: "0 items",  color: "#fffff0", img: MustardImg },
-  { name: "Vinegar",     count: "0 items",  color: "#f0f8ff", img: VinegarImg },
+  { name: "Handicrafts", count: "1 items",  color: "#fce4ec", img: HandicraftImg },
+  { name: "Rice",        count: "0 items",  color: "#fff3e0", img: RiceImg },
+  { name: "Mushrooms",   count: "0 items",  color: "#fce4ec", img: MushroomImg },
+  { name: "Ayurveda",    count: "10 items", color: "#e8f5e9", img: AyurvedImg },
+  { name: "Millets",     count: "6 items",  color: "#ede7f6", img: MilletsImg },
+  { name: "Teas",        count: "2 items",  color: "#f3e5f5", img: TeaImg },
+  { name: "Pickle",      count: "0 items",  color: "#fffde7", img: PickleImg },
+  { name: "Cocoa",       count: "0 items",  color: "#fbe9e7", img: CocoaImg },
+  { name: "Spices",      count: "0 items",  color: "#fff8e1", img: SpicesImg },
+  { name: "Mustard",     count: "0 items",  color: "#f9fbe7", img: MustardImg },
+  { name: "Vinegar",     count: "0 items",  color: "#e3f2fd", img: VinegarImg },
   { name: "Jaggery",     count: "0 items",  color: "#fff8ee", img: JaggeryImg },
-  { name: "Honey",       count: "0 items",  color: "#fffbf0", img: HoneyImg },
+  { name: "Honey",       count: "0 items",  color: "#fffde7", img: HoneyImg },
   { name: "Dry Fruits",  count: "0 items",  color: "#fdf5ec", img: DryFruitsImg },
   { name: "Extra",       count: "0 items",  color: "#f5f5f5", img: ExtraImg },
 ];
@@ -43,57 +43,70 @@ export default function CategorySection() {
 
   const scroll = (dir) => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir * 300, behavior: "smooth" });
+      // Scroll by exactly 1 card width + gap
+      scrollRef.current.scrollBy({ left: dir * 220, behavior: "smooth" });
     }
   };
 
   return (
     <div className="bg-white py-10">
       <div className="max-w-[1380px] mx-auto px-8">
+
         {/* Heading */}
-        <h2 className="text-2xl font-bold text-center mb-1 text-gray-900">
+        <h2 className="text-3xl font-bold text-center mb-1 text-gray-900">
           Fresh · Pure · Authentic ·
         </h2>
-        <h2 className="text-2xl font-bold text-center mb-6 text-gray-900">
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
           Direct From Farmers
         </h2>
 
-        {/* Slider */}
+        {/* Slider wrapper */}
         <div className="relative flex items-center">
+
           {/* Left Arrow */}
           <button
             onClick={() => scroll(-1)}
-            className="absolute -left-4 z-10 bg-white border border-gray-200 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-50"
+            className="absolute -left-5 z-10 bg-white border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors"
           >
-            <ChevronLeft size={18} />
+            <ChevronLeft size={20} className="text-gray-600" />
           </button>
 
           {/* Scrollable Row */}
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scroll-smooth w-full px-2"
-            style={{ scrollbarWidth: "none" }} // hide scrollbar Firefox
+            className="flex gap-5 overflow-x-auto w-full"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {categories.map((cat) => (
               <div
                 key={cat.name}
-                className="text-center cursor-pointer group flex-shrink-0 w-[110px]"
+                className="flex-shrink-0 cursor-pointer group"
+                style={{ width: "calc((100% - 100px) / 6)" }} // 5 gaps × 20px = 100px
               >
+                {/* Card Box */}
                 <div
-                  className="rounded-xl p-3 flex items-center justify-center h-24 mb-2 transition-transform group-hover:scale-105"
-                  style={{ backgroundColor: cat.color }}
+                  className="rounded-2xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105"
+                  style={{
+                    backgroundColor: cat.color,
+                    aspectRatio: "1 / 1",   // perfect square
+                    padding: "20px",
+                  }}
                 >
                   <img
                     src={cat.img}
                     alt={cat.name}
-                    className="h-16 w-16 object-contain"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="font-semibold text-sm text-gray-800">
-                  {cat.name}
-                </div>
-                <div style={{ color: GREEN }} className="text-xs font-medium">
-                  {cat.count}
+
+                {/* Name + Count */}
+                <div className="text-center mt-2">
+                  <div className="font-semibold text-sm text-gray-800">
+                    {cat.name}
+                  </div>
+                  <div className="text-xs font-medium" style={{ color: GREEN }}>
+                    {cat.count}
+                  </div>
                 </div>
               </div>
             ))}
@@ -102,12 +115,18 @@ export default function CategorySection() {
           {/* Right Arrow */}
           <button
             onClick={() => scroll(1)}
-            className="absolute -right-4 z-10 bg-white border border-gray-200 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-50"
+            className="absolute -right-5 z-10 bg-white border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors"
           >
-            <ChevronRight size={18} />
+            <ChevronRight size={20} className="text-gray-600" />
           </button>
+
         </div>
       </div>
+
+      {/* Hide scrollbar webkit */}
+      <style>{`
+        div::-webkit-scrollbar { display: none; }
+      `}</style>
     </div>
   );
 }
